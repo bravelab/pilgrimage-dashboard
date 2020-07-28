@@ -5,14 +5,22 @@ import React from "react";
 
 import { getAuthToken } from "@saleor/auth";
 
-const ExportButton: React.FC<any> = () => {
+const API_URL = "http://localhost:8000/";
+
+interface ExportButtonProps {
+  exportApiUrl: string;
+  fileName: string;
+}
+
+const ExportButton: React.FC<ExportButtonProps> = props => {
+  const { exportApiUrl, fileName } = props;
 
   const onExport = () => {
-    const token = 'Bearer '.concat(getAuthToken());
-    axios.get('http://localhost:8000/export/orders/', {
+    const token = `JWT ${getAuthToken()}`;
+    axios.get(`${API_URL}${exportApiUrl}`, {
       headers: {
         "Authorization": token,
-        'Content-Disposition': "attachment; filename=template.xlsx",
+        'Content-Disposition': `attachment; filename=${fileName}.xlsx`,
         'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
       },
       responseType: "arraybuffer"
@@ -21,7 +29,7 @@ const ExportButton: React.FC<any> = () => {
        const url = window.URL.createObjectURL(new Blob([response.data]));
        const link = document.createElement('a');
        link.href = url;
-       link.setAttribute('download', 'template.xlsx');
+       link.setAttribute('download', `${fileName}.xlsx`);
        document.body.appendChild(link);
        link.click();
     })
@@ -29,7 +37,7 @@ const ExportButton: React.FC<any> = () => {
   };
 
   return (
-    <Button variant="contained" onClick={onExport}>Export</Button>
+    <Button color="primary" variant="contained" onClick={onExport}>Export</Button>
   );
 };
 
