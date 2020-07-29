@@ -24,7 +24,8 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 const environmentPlugin = new webpack.EnvironmentPlugin([
   "APP_MOUNT_URI",
-  "API_URI"
+  "API_URI",
+  "PILGRIMAGE_API_URI"
 ]);
 
 const dashboardBuildPath = "build/dashboard/";
