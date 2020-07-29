@@ -29,6 +29,7 @@
     "apollo-link-context": "^1.0.18",
     "apollo-link-error": "^1.1.11",
     "apollo-upload-client": "^9.1.0",
+    "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "crc-32": "^1.2.0",
     "downshift": "^1.31.16",

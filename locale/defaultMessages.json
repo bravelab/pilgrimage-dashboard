@@ -5384,5 +5384,8 @@
   "voucherDetailsUnassignProduct": {
     "context": "unassign product from voucher, button",
     "string": "Unassign"
+  },
+  "exportButton": {
+    "string": "Export"
   }
 }

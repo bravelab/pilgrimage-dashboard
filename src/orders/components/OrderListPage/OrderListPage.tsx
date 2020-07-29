@@ -1,10 +1,12 @@
 import Button from "@material-ui/core/Button";
+import Box from '@material-ui/core/Box';
 import Card from "@material-ui/core/Card";
 
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import Container from "@saleor/components/Container";
+import ExportButton from "@saleor/components/ExportButton";
 import PageHeader from "@saleor/components/PageHeader";
 import { sectionNames } from "@saleor/intl";
 import { FilterPageProps, PageListProps, SortPage } from "@saleor/types";
@@ -53,6 +55,13 @@ const OrderListPage: React.FC<OrderListPageProps> = ({
             description="button"
           />
         </Button>
+
+        <Box ml={2}>
+          <ExportButton
+            exportApiUrl="export/orders/"
+            fileName="orders"
+          />
+        </Box>
       </PageHeader>
       <Card>
         <FilterBar
