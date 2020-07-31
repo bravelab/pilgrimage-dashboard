@@ -55,13 +55,7 @@ const LoginCard: React.FC<LoginCardProps> = props => {
   const intl = useIntl();
 
   return (
-    <Form
-      initial={{
-        email: "admin@example.com",
-        password: "admin"
-      }}
-      onSubmit={onSubmit}
-    >
+    <Form initial={{ email: "", password: "" }} onSubmit={onSubmit}>
       {({ change: handleChange, data, submit: handleSubmit }) => (
         <>
           {error && (
