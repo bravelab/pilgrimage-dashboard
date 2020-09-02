@@ -43,11 +43,6 @@ const OrderFulfill: React.FC<OrderFulfillProps> = ({ orderId }) => {
       }
     }
   });
-    // if(warehouseData) {
-    //     warehouseData?.warehouses.edges.forEach(item=> {
-    //         console.log(!!item.node.shippingZones.edges.length);
-    //     })
-    // }
 
   return (
     <>
