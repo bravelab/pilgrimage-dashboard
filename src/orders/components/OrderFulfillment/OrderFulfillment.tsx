@@ -1,6 +1,4 @@
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import { makeStyles } from "@material-ui/core/styles";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -74,7 +72,6 @@ interface OrderFulfillmentProps {
   fulfillment: OrderDetails_order_fulfillments;
   orderNumber: string;
   onOrderFulfillmentCancel: () => void;
-  onTrackingCodeAdd: () => void;
 }
 
 const numberOfColumns = 4;
@@ -83,8 +80,7 @@ const OrderFulfillment: React.FC<OrderFulfillmentProps> = props => {
   const {
     fulfillment,
     orderNumber,
-    onOrderFulfillmentCancel,
-    onTrackingCodeAdd
+    onOrderFulfillmentCancel
   } = props;
   const classes = useStyles(props);
 
@@ -268,16 +264,6 @@ const OrderFulfillment: React.FC<OrderFulfillmentProps> = props => {
           </TableRow>
         </TableBody>
       </ResponsiveTable>
-      {status === FulfillmentStatus.FULFILLED && !fulfillment.trackingNumber && (
-        <CardActions>
-          <Button color="primary" onClick={onTrackingCodeAdd}>
-            <FormattedMessage
-              defaultMessage="Add tracking"
-              description="fulfillment group tracking number"
-            />
-          </Button>
-        </CardActions>
-      )}
     </Card>
   );
 };
