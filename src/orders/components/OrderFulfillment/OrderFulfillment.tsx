@@ -72,6 +72,7 @@ interface OrderFulfillmentProps {
   fulfillment: OrderDetails_order_fulfillments;
   orderNumber: string;
   onOrderFulfillmentCancel: () => void;
+  onTrackingCodeAdd: () => void;
 }
 
 const numberOfColumns = 4;

@@ -76,8 +76,7 @@ const OrderCustomer: React.FC<OrderCustomerProps> = props => {
     onCustomerEdit,
     onBillingAddressEdit,
     onFetchMore: onFetchMoreUsers,
-    onProfileView,
-    onShippingAddressEdit
+    onProfileView
   } = props;
   const classes = useStyles(props);
 
