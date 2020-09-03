@@ -76,8 +76,7 @@ const OrderCustomer: React.FC<OrderCustomerProps> = props => {
     onCustomerEdit,
     onBillingAddressEdit,
     onFetchMore: onFetchMoreUsers,
-    onProfileView,
-    onShippingAddressEdit
+    onProfileView
   } = props;
   const classes = useStyles(props);
 
@@ -237,63 +236,6 @@ const OrderCustomer: React.FC<OrderCustomerProps> = props => {
           </CardContent>
         </>
       )}
-      <Hr />
-      <CardContent>
-        <div className={classes.sectionHeader}>
-          <Typography className={classes.sectionHeaderTitle}>
-            <FormattedMessage defaultMessage="Shipping Address" />
-          </Typography>
-          {canEditAddresses && (
-            <div className={classes.sectionHeaderToolbar}>
-              <Button
-                color="primary"
-                variant="text"
-                onClick={onShippingAddressEdit}
-                disabled={!onShippingAddressEdit && user === undefined}
-              >
-                <FormattedMessage {...buttonMessages.edit} />
-              </Button>
-            </div>
-          )}
-        </div>
-        {shippingAddress === undefined ? (
-          <Skeleton />
-        ) : shippingAddress === null ? (
-          <Typography>
-            <FormattedMessage
-              defaultMessage="Not set"
-              description="shipping address is not set in draft order"
-              id="orderCustomerShippingAddressNotSet"
-            />
-          </Typography>
-        ) : (
-          <>
-            {shippingAddress.companyName && (
-              <Typography>{shippingAddress.companyName}</Typography>
-            )}
-            <Typography>
-              {shippingAddress.firstName} {shippingAddress.lastName}
-            </Typography>
-            <Typography>
-              {shippingAddress.streetAddress1}
-              <br />
-              {shippingAddress.streetAddress2}
-            </Typography>
-            <Typography>
-              {shippingAddress.postalCode} {shippingAddress.city}
-              {shippingAddress.cityArea ? ", " + shippingAddress.cityArea : ""}
-            </Typography>
-            <Typography>
-              {shippingAddress.countryArea
-                ? shippingAddress.countryArea +
-                  ", " +
-                  shippingAddress.country.country
-                : shippingAddress.country.country}
-            </Typography>
-            <Typography>{shippingAddress.phone}</Typography>
-          </>
-        )}
-      </CardContent>
       <Hr />
       <CardContent>
         <div className={classes.sectionHeader}>

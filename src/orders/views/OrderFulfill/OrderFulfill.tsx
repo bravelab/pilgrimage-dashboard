@@ -84,7 +84,9 @@ const OrderFulfill: React.FC<OrderFulfillProps> = ({ orderId }) => {
         }
         order={data?.order}
         saveButtonBar="default"
-        warehouses={warehouseData?.warehouses.edges.map(edge => edge.node)}
+        warehouses={warehouseData?.warehouses.edges
+            .filter(edge => !!edge.node.shippingZones.edges.length)
+            .map(edge => edge.node)}
       />
     </>
   );
