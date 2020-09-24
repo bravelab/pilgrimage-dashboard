@@ -1,5 +1,5 @@
 import Button from "@material-ui/core/Button";
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 
 import React from "react";
@@ -12,6 +12,9 @@ import { sectionNames } from "@saleor/intl";
 import { FilterPageProps, PageListProps, SortPage } from "@saleor/types";
 import { OrderListUrlSortField } from "@saleor/orders/urls";
 import FilterBar from "@saleor/components/FilterBar";
+import useUser from "@saleor/hooks/useUser";
+import { hasPermissionGroup } from "@saleor/auth/misc";
+import { PermissionGroupEnum } from "@saleor/types/globalTypes";
 import { OrderList_orders_edges_node } from "../../types/OrderList";
 import OrderList from "../OrderList";
 import {
@@ -46,22 +49,28 @@ const OrderListPage: React.FC<OrderListPageProps> = ({
 
   const filterStructure = createFilterStructure(intl, filterOpts);
 
+  const { user } = useUser();
+  const isNotVolunteer = !hasPermissionGroup(
+    PermissionGroupEnum.VOLUNTEER,
+    user
+  );
+
   return (
     <Container>
       <PageHeader title={intl.formatMessage(sectionNames.orders)}>
-        <Button color="primary" variant="contained" onClick={onAdd}>
-          <FormattedMessage
-            defaultMessage="Create order"
-            description="button"
-          />
-        </Button>
-
-        <Box ml={2}>
-          <ExportButton
-            exportApiUrl="export/orders/"
-            fileName="orders"
-          />
-        </Box>
+        {isNotVolunteer && (
+          <Button color="primary" variant="contained" onClick={onAdd}>
+            <FormattedMessage
+              defaultMessage="Create order"
+              description="button"
+            />
+          </Button>
+        )}
+        {isNotVolunteer && (
+          <Box ml={2}>
+            <ExportButton exportApiUrl="export/orders/" fileName="orders" />
+          </Box>
+        )}
       </PageHeader>
       <Card>
         <FilterBar
