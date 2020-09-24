@@ -13,8 +13,10 @@ import PageHeader from "@saleor/components/PageHeader";
 import Skeleton from "@saleor/components/Skeleton";
 import { sectionNames } from "@saleor/intl";
 import { UserPermissionProps } from "@saleor/types";
+import useUser from "@saleor/hooks/useUser";
+import { hasPermissionGroup } from "@saleor/auth/misc";
 import { maybe, renderCollection } from "../../../misc";
-import { OrderStatus } from "../../../types/globalTypes";
+import { OrderStatus, PermissionGroupEnum } from "../../../types/globalTypes";
 import { OrderDetails_order } from "../../types/OrderDetails";
 import OrderCustomer from "../OrderCustomer";
 import OrderCustomerNote from "../OrderCustomerNote";
@@ -86,8 +88,16 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = props => {
 
   const intl = useIntl();
 
-  const canCancel = maybe(() => order.status) !== OrderStatus.CANCELED;
-  const canEditAddresses = maybe(() => order.status) !== OrderStatus.CANCELED;
+  const { user } = useUser();
+  const isNotVolunteer = !hasPermissionGroup(
+    PermissionGroupEnum.VOLUNTEER,
+    user
+  );
+
+  const canCancel =
+    maybe(() => order.status) !== OrderStatus.CANCELED && isNotVolunteer;
+  const canEditAddresses =
+    maybe(() => order.status) !== OrderStatus.CANCELED && isNotVolunteer;
   const canFulfill = maybe(() => order.status) !== OrderStatus.CANCELED;
   const unfulfilled = maybe(() => order.lines, []).filter(
     line => line.quantityFulfilled < line.quantity
@@ -163,10 +173,12 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = props => {
             onRefund={onPaymentRefund}
             onVoid={onPaymentVoid}
           />
-          <OrderHistory
-            history={maybe(() => order.events)}
-            onNoteAdd={onNoteAdd}
-          />
+          {isNotVolunteer && (
+            <OrderHistory
+              history={maybe(() => order.events)}
+              onNoteAdd={onNoteAdd}
+            />
+          )}
         </div>
         <div>
           <OrderCustomer
