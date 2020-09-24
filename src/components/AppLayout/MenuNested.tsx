@@ -8,6 +8,7 @@ import SVG from "react-inlinesvg";
 import menuArrowIcon from "@assets/images/menu-arrow-icon.svg";
 import useTheme from "@saleor/hooks/useTheme";
 import { createHref } from "@saleor/misc";
+import useUser from "@saleor/hooks/useUser";
 import { drawerNestedMenuWidth, drawerWidthExpandedMobile } from "./consts";
 import { IActiveSubMenu } from "./MenuList";
 import { IMenuItem } from "./menuStructure";
@@ -111,6 +112,7 @@ export interface MenuNestedProps {
 }
 
 const MenuNested: React.FC<MenuNestedProps> = props => {
+  const { user } = useUser();
   const {
     activeItem,
     ariaLabel,
@@ -123,7 +125,9 @@ const MenuNested: React.FC<MenuNestedProps> = props => {
   } = props;
   const classes = useStyles(props);
 
-  const menuItems = menuItem.children;
+  const menuItems = menuItem.children.filter(item =>
+    user.userPermissions.map(perm => perm.code).includes(item.permission)
+  );
   const { isDark } = useTheme();
   const closeMenu = (menuItemUrl, event) => {
     onMenuItemClick(menuItemUrl, event);

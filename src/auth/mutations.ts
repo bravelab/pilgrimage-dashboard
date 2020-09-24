@@ -24,6 +24,10 @@ export const fragmentUser = gql`
     avatar {
       url
     }
+    permissionGroups {
+      id
+      name
+    }
   }
 `;
 
