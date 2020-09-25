@@ -126,8 +126,11 @@ const MenuNested: React.FC<MenuNestedProps> = props => {
   const classes = useStyles(props);
 
   const menuItems = menuItem.children.filter(item =>
-    user.userPermissions.map(perm => perm.code).includes(item.permission)
+    user.userPermissions
+      .map(perm => perm.code)
+      .includes(!!item.permission ? item.permission : menuItem.permission)
   );
+
   const { isDark } = useTheme();
   const closeMenu = (menuItemUrl, event) => {
     onMenuItemClick(menuItemUrl, event);
