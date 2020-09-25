@@ -9,6 +9,8 @@ import { matchPath } from "react-router";
 import configureIcon from "@assets/images/menu-configure-icon.svg";
 import useTheme from "@saleor/hooks/useTheme";
 import { sectionNames } from "@saleor/intl";
+import { PermissionGroupEnum } from "@saleor/types/globalTypes";
+import { hasPermissionGroup } from "@saleor/auth/misc";
 import { User } from "../../auth/types/User";
 import {
   configurationMenuUrl,
@@ -332,31 +334,33 @@ const MenuList: React.FC<MenuListProps> = props => {
           </a>
         );
       })}
-      {renderConfigure && configutationMenu.length > 0 && (
-        <a
-          className={classes.menuListItem}
-          href={createHref(configurationMenuUrl)}
-          onClick={event => closeSubMenu(configurationMenuUrl, event)}
-        >
-          <div className={classes.menuItemHover}>
-            <SVG
-              className={classNames(classes.menuIcon, {
-                [classes.menuIconDark]: isDark,
-                [classes.menuIconSmall]: !isMenuSmall
-              })}
-              src={configureIcon}
-            />
-            <Typography
-              aria-label="configuration"
-              className={classNames(classes.menuListItemText, {
-                [classes.menuListItemTextHide]: !isMenuSmall
-              })}
-            >
-              <FormattedMessage {...sectionNames.configuration} />
-            </Typography>
-          </div>
-        </a>
-      )}
+      {renderConfigure &&
+        configutationMenu.length > 0 &&
+        !hasPermissionGroup(PermissionGroupEnum.VOLUNTEER, user) && (
+          <a
+            className={classes.menuListItem}
+            href={createHref(configurationMenuUrl)}
+            onClick={event => closeSubMenu(configurationMenuUrl, event)}
+          >
+            <div className={classes.menuItemHover}>
+              <SVG
+                className={classNames(classes.menuIcon, {
+                  [classes.menuIconDark]: isDark,
+                  [classes.menuIconSmall]: !isMenuSmall
+                })}
+                src={configureIcon}
+              />
+              <Typography
+                aria-label="configuration"
+                className={classNames(classes.menuListItemText, {
+                  [classes.menuListItemTextHide]: !isMenuSmall
+                })}
+              >
+                <FormattedMessage {...sectionNames.configuration} />
+              </Typography>
+            </div>
+          </a>
+        )}
     </div>
   );
 };

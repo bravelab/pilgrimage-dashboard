@@ -11,8 +11,14 @@ import { Hr } from "@saleor/components/Hr";
 import Money, { subtractMoney } from "@saleor/components/Money";
 import Skeleton from "@saleor/components/Skeleton";
 import StatusLabel from "@saleor/components/StatusLabel";
+import useUser from "@saleor/hooks/useUser";
+import { hasPermissionGroup } from "@saleor/auth/misc";
 import { maybe, transformPaymentStatus } from "../../../misc";
-import { OrderAction, OrderStatus } from "../../../types/globalTypes";
+import {
+  OrderAction,
+  OrderStatus,
+  PermissionGroupEnum
+} from "../../../types/globalTypes";
 import { OrderDetails_order } from "../../types/OrderDetails";
 
 const useStyles = makeStyles(
@@ -46,11 +52,19 @@ const OrderPayment: React.FC<OrderPaymentProps> = props => {
 
   const intl = useIntl();
 
+  const { user } = useUser();
+  const isNotVolunteer = !hasPermissionGroup(
+    PermissionGroupEnum.VOLUNTEER,
+    user
+  );
+
   const canCapture = maybe(() => order.actions, []).includes(
     OrderAction.CAPTURE
   );
   const canVoid = maybe(() => order.actions, []).includes(OrderAction.VOID);
-  const canRefund = maybe(() => order.actions, []).includes(OrderAction.REFUND);
+  const canRefund =
+    maybe(() => order.actions, []).includes(OrderAction.REFUND) &&
+    isNotVolunteer;
   const canMarkAsPaid = maybe(() => order.actions, []).includes(
     OrderAction.MARK_AS_PAID
   );

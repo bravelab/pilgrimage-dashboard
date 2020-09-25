@@ -575,6 +575,13 @@ export enum PermissionEnum {
   MANAGE_TRANSLATIONS = "MANAGE_TRANSLATIONS",
   MANAGE_USERS = "MANAGE_USERS",
   MANAGE_WEBHOOKS = "MANAGE_WEBHOOKS",
+  MANAGE_NONE = "MANAGE_NONE",
+}
+
+export enum PermissionGroupEnum {
+  VOLUNTEER = "Volunteer",
+  FULL_ACCESS = "Full Access",
+  CUSTOMER_SUPPORT = "Customer support"
 }
 
 export enum PermissionGroupErrorCode {

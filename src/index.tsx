@@ -54,7 +54,7 @@ import SiteSettingsSection from "./siteSettings";
 import StaffSection from "./staff";
 import TaxesSection from "./taxes";
 import TranslationsSection from "./translations";
-import { PermissionEnum } from "./types/globalTypes";
+import { PermissionEnum, PermissionGroupEnum } from "./types/globalTypes";
 import WebhooksSection from "./webhooks";
 import { warehouseSection } from "./warehouses/urls";
 import WarehouseSection from "./warehouses";
@@ -176,101 +176,182 @@ const Routes: React.FC = () => {
                   <SectionRoute exact path="/" component={HomePage} />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PRODUCTS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/categories"
                     component={CategorySection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PRODUCTS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/collections"
                     component={CollectionSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_USERS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/customers"
                     component={CustomerSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_DISCOUNTS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/discounts"
                     component={DiscountSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PAGES]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/pages"
                     component={PageSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PLUGINS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/plugins"
                     component={PluginsSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_ORDERS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT,
+                      PermissionGroupEnum.VOLUNTEER
+                    ]}
                     path="/orders"
                     component={OrdersSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PRODUCTS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/products"
                     component={ProductSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PRODUCTS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/product-types"
                     component={ProductTypesSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_STAFF]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/staff"
                     component={StaffSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_STAFF]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/permission-groups"
                     component={PermissionGroupSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_SETTINGS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/site-settings"
                     component={SiteSettingsSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_SETTINGS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/taxes"
                     component={TaxesSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_SHIPPING]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/shipping"
                     component={ShippingSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_TRANSLATIONS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/translations"
                     component={TranslationsSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_WEBHOOKS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path="/webhooks"
                     component={WebhooksSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_MENUS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path={navigationSection}
                     component={NavigationSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PRODUCTS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path={attributeSection}
                     component={AttributeSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_APPS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path={serviceSection}
                     component={ServiceSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PRODUCTS]}
+                    permissionsGroups={[
+                      PermissionGroupEnum.FULL_ACCESS,
+                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                    ]}
                     path={warehouseSection}
                     component={WarehouseSection}
                   />
