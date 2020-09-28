@@ -18,8 +18,13 @@ import StatusLabel from "@saleor/components/StatusLabel";
 import TableCellAvatar, {
   AVATAR_MARGIN
 } from "@saleor/components/TableCellAvatar";
+import useUser from "@saleor/hooks/useUser";
+import { hasPermissionGroup } from "@saleor/auth/misc";
 import { maybe, renderCollection, getStringOrPlaceholder } from "../../../misc";
-import { FulfillmentStatus } from "../../../types/globalTypes";
+import {
+  FulfillmentStatus,
+  PermissionGroupEnum
+} from "../../../types/globalTypes";
 import { OrderDetails_order_fulfillments } from "../../types/OrderDetails";
 
 const useStyles = makeStyles(
@@ -78,14 +83,16 @@ interface OrderFulfillmentProps {
 const numberOfColumns = 4;
 
 const OrderFulfillment: React.FC<OrderFulfillmentProps> = props => {
-  const {
-    fulfillment,
-    orderNumber,
-    onOrderFulfillmentCancel
-  } = props;
+  const { fulfillment, orderNumber, onOrderFulfillmentCancel } = props;
   const classes = useStyles(props);
 
   const intl = useIntl();
+
+  const { user } = useUser();
+  const isNotVolunteer = !hasPermissionGroup(
+    PermissionGroupEnum.VOLUNTEER,
+    user
+  );
 
   const lines = maybe(() => fulfillment.lines);
   const status = maybe(() => fulfillment.status);
@@ -136,7 +143,8 @@ const OrderFulfillment: React.FC<OrderFulfillmentProps> = props => {
           )
         }
         toolbar={
-          maybe(() => fulfillment.status) === FulfillmentStatus.FULFILLED && (
+          maybe(() => fulfillment.status) === FulfillmentStatus.FULFILLED &&
+          isNotVolunteer && (
             <CardMenu
               menuItems={[
                 {
