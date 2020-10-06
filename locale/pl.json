@@ -41,7 +41,7 @@
     "string": "Aktywność"
   },
   "homeActivityCardNoActivities": {
-    "string": "No activities found"
+    "string": "Brak aktywności"
   },
   "homeAnalyticsCardHeader": {
     "string": "Dzisiaj"
@@ -55,7 +55,7 @@
     "string": "Tutaj znajdują się informacje, które zebraliśmy o Twoim sklepie"
   },
   "homeNotificationTableNoOrders": {
-    "string": "No orders ready to fulfill"
+    "string": "Brak zamówień do realizacji"
   },
   "homeNotificationTableOrders": {
     "string": "{amount, plural,one {One order is ready to fulfill} other {{amount} Zamówień gotowych do realizacji}}"
@@ -124,14 +124,14 @@
   },
   "menuItemDialogEditItem": {
     "context": "edit menu item, header",
-    "string": "Edit Item"
+    "string": "Edytuj element"
   },
   "menuItemDialogLinkLabel": {
     "context": "label",
     "string": "Odnośnik"
   },
   "menuItemDialogLinkPlaceholder": {
-    "string": "Start typing to begin search..."
+    "string": "Zacznij pisać żeby wyszukać..."
   },
   "menuItemDialogNameLabel": {
     "context": "menu item name",
@@ -139,24 +139,24 @@
   },
   "menuItemsAddItem": {
     "context": "add new menu item",
-    "string": "Create new item"
+    "string": "Dodaj nowy element"
   },
   "menuItemsHeader": {
     "context": "header",
-    "string": "Menu Items"
+    "string": "Elementy menu"
   },
   "menuItemsPlaceholder": {
     "string": "Dodaj nowy obiekt, aby zacząć tworzyć menu"
   },
   "menuListCreatedMenu": {
-    "string": "Created menu"
+    "string": "Utworzone menu"
   },
   "menuListDeleteMenuContent": {
-    "string": "Are you sure you want to delete {menuName}?"
+    "string": "Czy chcesz usunąć {menuName}?"
   },
   "menuListDeleteMenuHeader": {
     "context": "dialog header",
-    "string": "Delete Menu"
+    "string": "Skasuj menu"
   },
   "menuListDeleteMenusContent": {
     "string": "{counter,plural,one {Are you sure you want to delete this menu?} other {Are you sure you want to delete {displayQuantity} menus?}}"
@@ -256,15 +256,15 @@
   },
   "saleDetailsPageCategoriesQuantity": {
     "context": "number of categories",
-    "string": "Categories ({quantity})"
+    "string": "Kategorie ({quantity})"
   },
   "saleDetailsPageCollectionsQuantity": {
     "context": "number of collections",
-    "string": "Collections ({quantity})"
+    "string": "Kolekcje ({quantity})"
   },
   "saleDetailsPageProductsQuantity": {
     "context": "number of products",
-    "string": "Products ({quantity})"
+    "string": "Produkty ({quantity})"
   },
   "saleDetailsUnassignCategory": {
     "context": "unassign category from sale, button",
@@ -280,15 +280,15 @@
   },
   "shippingZoneDetailsDialogsDeleteShippingMethod": {
     "context": "delete shipping method",
-    "string": "Are you sure you want to delete {name}?"
+    "string": "Czy chcesz usunąć {name}?"
   },
   "shippingZoneDetailsDialogsDeleteShippingZone": {
     "context": "delete shipping zone",
-    "string": "Are you sure you want to delete {name}?"
+    "string": "Czy chcesz usunąć {name}?"
   },
   "shippingZoneWarehouses_dot_autocomplete_dot_label": {
     "context": "autocomplete select label",
-    "string": "Warehouse"
+    "string": "Magazyn"
   },
   "siteSettingsMailingHelperText": {
     "context": "helper text",
@@ -303,10 +303,10 @@
     "string": "Atrybuty"
   },
   "src_dot_attributes_dot_attributeSlugUnique": {
-    "string": "Attribute with this slug already exists"
+    "string": "Atrybut z tym slug już istnieje"
   },
   "src_dot_attributes_dot_attributeValueAlreadyExists": {
-    "string": "This value already exists within this attribute"
+    "string": "Ta wartość już istnieje"
   },
   "src_dot_attributes_dot_components_dot_AttributeBulkDeleteDialog_dot_1184518529": {
     "context": "dialog content",
@@ -318,11 +318,11 @@
   },
   "src_dot_attributes_dot_components_dot_AttributeDeleteDialog_dot_1889602489": {
     "context": "dialog title",
-    "string": "Delete attribute"
+    "string": "Usuń atrybut"
   },
   "src_dot_attributes_dot_components_dot_AttributeDeleteDialog_dot_3738429348": {
     "context": "dialog content",
-    "string": "Are you sure you want to delete {attributeName}?"
+    "string": "Czy chcesz usunąć {attributeName}?"
   },
   "src_dot_attributes_dot_components_dot_AttributeDetails_dot_1005562666": {
     "context": "attribute's editor component",
@@ -361,11 +361,11 @@
     "string": "Utwórz atrybut"
   },
   "src_dot_attributes_dot_components_dot_AttributeListPage_dot_3916653510": {
-    "string": "Search Attribute"
+    "string": "Szukaj atrybutu"
   },
   "src_dot_attributes_dot_components_dot_AttributeListPage_dot_availableInGrid": {
     "context": "attribute can be column in product list table",
-    "string": "Can be used as column"
+    "string": "Może być użyty jako kolumna"
   },
   "src_dot_attributes_dot_components_dot_AttributeListPage_dot_filterableInDashboard": {
     "context": "use attribute in filtering",
@@ -373,11 +373,11 @@
   },
   "src_dot_attributes_dot_components_dot_AttributeListPage_dot_filterableInStorefront": {
     "context": "use attribute in filtering",
-    "string": "Filterable in Storefront"
+    "string": "Filtrowany na Storefront"
   },
   "src_dot_attributes_dot_components_dot_AttributeListPage_dot_isVariantOnly": {
     "context": "attribute can be used only in variants",
-    "string": "Variant Only"
+    "string": "Tylko wariant"
   },
   "src_dot_attributes_dot_components_dot_AttributeListPage_dot_valueRequired": {
     "context": "attribute value is required",
@@ -449,18 +449,18 @@
   },
   "src_dot_attributes_dot_components_dot_AttributeValueDeleteDialog_dot_1326420604": {
     "context": "delete attribute value",
-    "string": "Are you sure you want to delete \"{name}\" value?"
+    "string": "Czy chcesz usunąć wartość \"{name}\"?"
   },
   "src_dot_attributes_dot_components_dot_AttributeValueDeleteDialog_dot_203246037": {
     "context": "dialog title",
-    "string": "Delete attribute value"
+    "string": "Usuń wartość atrybutu"
   },
   "src_dot_attributes_dot_components_dot_AttributeValueDeleteDialog_dot_4031078167": {
     "string": "Are you sure you want to delete \"{name}\" value? If you delete it you won’t be able to assign it to any of the products with \"{attributeName}\" attribute."
   },
   "src_dot_attributes_dot_components_dot_AttributeValueEditDialog_dot_1395607402": {
     "context": "edit attribute value",
-    "string": "Edit Value"
+    "string": "Edytuj"
   },
   "src_dot_attributes_dot_components_dot_AttributeValueEditDialog_dot_1841790893": {
     "context": "add attribute value",
@@ -738,11 +738,11 @@
   },
   "src_dot_collections_dot_components_dot_CollectionCreatePage_dot_1815688500": {
     "context": "collection",
-    "string": "since {date}"
+    "string": "od {date}"
   },
   "src_dot_collections_dot_components_dot_CollectionCreatePage_dot_2001551496": {
     "context": "collection",
-    "string": "will be visible from {date}"
+    "string": "będzie widoczna od {date}"
   },
   "src_dot_collections_dot_components_dot_CollectionCreatePage_dot_946315389": {
     "string": "Dodaj tytuł i opis dla przeglądarek, aby ułatwić znalezienie tej kolekcji"
@@ -753,11 +753,11 @@
   },
   "src_dot_collections_dot_components_dot_CollectionDetailsPage_dot_1815688500": {
     "context": "collection",
-    "string": "since {date}"
+    "string": "od {date}"
   },
   "src_dot_collections_dot_components_dot_CollectionDetailsPage_dot_2001551496": {
     "context": "collection",
-    "string": "will be visible from {date}"
+    "string": "będzie widoczna od {date}"
   },
   "src_dot_collections_dot_components_dot_CollectionDetailsPage_dot_2906897537": {
     "context": "switch button",
@@ -772,7 +772,7 @@
   },
   "src_dot_collections_dot_components_dot_CollectionImage_dot_2224943474": {
     "context": "section header",
-    "string": "Background Image (optional)"
+    "string": "Tło (opcjonalne)"
   },
   "src_dot_collections_dot_components_dot_CollectionImage_dot_3289097895": {
     "context": "field is optional",
@@ -783,7 +783,7 @@
     "string": "Wszystkie kolekcje"
   },
   "src_dot_collections_dot_components_dot_CollectionListPage_dot_4057224233": {
-    "string": "Search Collection"
+    "string": "Szukaj kolekcji"
   },
   "src_dot_collections_dot_components_dot_CollectionListPage_dot_686910896": {
     "context": "button",
@@ -798,7 +798,7 @@
     "string": "Opublikowany"
   },
   "src_dot_collections_dot_components_dot_CollectionList_dot_2137803833": {
-    "string": "No collections found"
+    "string": "Brak kolekcji"
   },
   "src_dot_collections_dot_components_dot_CollectionList_dot_2341910657": {
     "context": "collection is not published",
@@ -835,11 +835,11 @@
   },
   "src_dot_collections_dot_components_dot_CollectionProducts_dot_4114667680": {
     "context": "products in collection",
-    "string": "Products in {name}"
+    "string": "Produkty w {name}"
   },
   "src_dot_collections_dot_components_dot_CollectionProducts_dot_460524544": {
     "context": "button",
-    "string": "Assign product"
+    "string": "Przypisz produkt"
   },
   "src_dot_collections_dot_components_dot_CollectionProducts_dot_636461959": {
     "context": "product name",
@@ -849,23 +849,23 @@
     "string": "Kolekcja usunięta"
   },
   "src_dot_collections_dot_views_dot_2001540731": {
-    "string": "Added product to collection"
+    "string": "Produkt dodany do kolekcji"
   },
   "src_dot_collections_dot_views_dot_2402899582": {
-    "string": "Are you sure you want to delete collection's image?"
+    "string": "Czy chcesz usunać obrazek dla kolekcji?"
   },
   "src_dot_collections_dot_views_dot_3215481647": {
-    "string": "{counter,plural,one {Are you sure you want to unassign this product?} other {Are you sure you want to unassign {displayQuantity} products?}}"
+    "string": "{counter,plural,one {Czy chcesz odznaczyć ten produkt?} other {Czy chcesz oznaczyć {displayQuantity} produktów?}}"
   },
   "src_dot_collections_dot_views_dot_3482612628": {
-    "string": "Deleted product from collection"
+    "string": "Produkt skasowany z kolekcji"
   },
   "src_dot_collections_dot_views_dot_3791354625": {
     "context": "dialog title",
-    "string": "Unassign products from collection"
+    "string": "Odznacz produkty z kolekcji"
   },
   "src_dot_collections_dot_views_dot_523939418": {
-    "string": "Are you sure you want to delete {collectionName}?"
+    "string": "Czy chcesz usunąć {collectionName}?"
   },
   "src_dot_collections_dot_views_dot_686910896": {
     "context": "window title",
@@ -873,15 +873,15 @@
   },
   "src_dot_collections_dot_views_dot_699514132": {
     "context": "dialog title",
-    "string": "Delete Collection"
+    "string": "Usuń kolekcjię"
   },
   "src_dot_collections_dot_views_dot_870815507": {
     "context": "unassign product from collection, button",
-    "string": "Unassign"
+    "string": "Odznacz"
   },
   "src_dot_collections_dot_views_dot_942133001": {
     "context": "dialog title",
-    "string": "Delete image"
+    "string": "Usuń obrazek"
   },
   "src_dot_collections_dot_views_dot_CollectionList_dot_1547167026": {
     "context": "publish collections",
@@ -899,18 +899,18 @@
   },
   "src_dot_collections_dot_views_dot_CollectionList_dot_2637364047": {
     "context": "dialog title",
-    "string": "Unpublish collections"
+    "string": "Cofnij publikację kolekcji"
   },
   "src_dot_collections_dot_views_dot_CollectionList_dot_2756013640": {
     "string": "{counter,plural,one {Are you sure you want to publish this collection?} other {Are you sure you want to publish {displayQuantity} collections?}}"
   },
   "src_dot_collections_dot_views_dot_CollectionList_dot_2823425739": {
     "context": "dialog title",
-    "string": "Publish collections"
+    "string": "Opublikuj kolekcje"
   },
   "src_dot_collections_dot_views_dot_CollectionList_dot_3817188998": {
     "context": "dialog title",
-    "string": "Delete collections"
+    "string": "Skasuj kolekcje"
   },
   "src_dot_components_dot_AccountPermissionGroups_dot_2836633439": {
     "string": "Grupy uprawnień"
@@ -921,22 +921,22 @@
   },
   "src_dot_components_dot_AccountPermissions_dot_2731975416": {
     "context": "card section description",
-    "string": "Available permissions"
+    "string": "Dostępne uprawnienia"
   },
   "src_dot_components_dot_AccountPermissions_dot_2853621891": {
     "context": "exceeded permissions description",
-    "string": "This groups permissions exceeds your own. You are able only to manage permissions that you have."
+    "string": "Nie możesz zmienić uprawnień których nie posiadasz"
   },
   "src_dot_components_dot_AccountPermissions_dot_3674526441": {
     "context": "permission list item description",
-    "string": "This group is last source of that permission"
+    "string": "Ta grupa jest ostatnim źródłem uprawnienia"
   },
   "src_dot_components_dot_AccountStatus_dot_2183517419": {
     "context": "section header",
     "string": "Status Konta"
   },
   "src_dot_components_dot_AccountStatus_dot_2683780981": {
-    "string": "If you want to disable this account uncheck the box below"
+    "string": "Jeśli chcesz wyłączyć te konto, odznacz checkbox"
   },
   "src_dot_components_dot_AddressEdit_dot_1139500589": {
     "string": "Kraj"
@@ -971,49 +971,49 @@
     "string": "Ustawienia Konta"
   },
   "src_dot_components_dot_AssignCategoryDialog_dot_1305061437": {
-    "string": "Search Categories"
+    "string": "Szukaj kategorii"
   },
   "src_dot_components_dot_AssignCategoryDialog_dot_190977792": {
     "context": "dialog header",
-    "string": "Assign Categories"
+    "string": "Przypisz kategorie"
   },
   "src_dot_components_dot_AssignCategoryDialog_dot_3690273268": {
-    "string": "Search by category name, etc..."
+    "string": "Szukaj..."
   },
   "src_dot_components_dot_AssignCategoryDialog_dot_3973677075": {
     "context": "button",
-    "string": "Assign categories"
+    "string": "Przypisz kategorie"
   },
   "src_dot_components_dot_AssignCollectionDialog_dot_1035511604": {
     "context": "button",
-    "string": "Assign collections"
+    "string": "Przypisz kolekcje"
   },
   "src_dot_components_dot_AssignCollectionDialog_dot_2605414502": {
-    "string": "Search by collection name, etc..."
+    "string": "Szukaj..."
   },
   "src_dot_components_dot_AssignCollectionDialog_dot_3992923611": {
     "context": "dialog header",
-    "string": "Assign Collection"
+    "string": "Przypisz kolekcję"
   },
   "src_dot_components_dot_AssignCollectionDialog_dot_4057224233": {
-    "string": "Search Collection"
+    "string": "Szukaj kolekcji"
   },
   "src_dot_components_dot_AssignProductDialog_dot_2100305525": {
     "context": "button",
-    "string": "Assign products"
+    "string": "Przypisz produkty"
   },
   "src_dot_components_dot_AssignProductDialog_dot_2336947364": {
-    "string": "Search by product name, attribute, product type etc..."
+    "string": "Szukaj..."
   },
   "src_dot_components_dot_AssignProductDialog_dot_2850255786": {
-    "string": "Search Products"
+    "string": "Szukaj produktów"
   },
   "src_dot_components_dot_AssignProductDialog_dot_649693468": {
     "context": "dialog header",
-    "string": "Assign Product"
+    "string": "Przypisz produkt"
   },
   "src_dot_components_dot_AutocompleteSelectMenu_dot_2332404293": {
-    "string": "No results"
+    "string": "Brak wyników"
   },
   "src_dot_components_dot_ColumnPicker_dot_1483881697": {
     "context": "button",
@@ -1053,7 +1053,7 @@
   },
   "src_dot_components_dot_ConfirmButton_dot_2845142593": {
     "context": "button",
-    "string": "Error"
+    "string": "Błąd"
   },
   "src_dot_components_dot_CountryList_dot_2460766407": {
     "context": "number of countries",
@@ -1065,24 +1065,24 @@
   },
   "src_dot_components_dot_DeleteFilterTabDialog_dot_2173195312": {
     "context": "custom search delete, dialog header",
-    "string": "Delete Search"
+    "string": "Wyczyść wyszukiwanie"
   },
   "src_dot_components_dot_DeleteFilterTabDialog_dot_71479100": {
-    "string": "Are you sure you want to delete {name} search tab?"
+    "string": "Czy chcesz skasować {name}?"
   },
   "src_dot_components_dot_ErrorMessageCard_dot_2845142593": {
     "context": "header",
-    "string": "Error"
+    "string": "Błąd"
   },
   "src_dot_components_dot_ErrorPage_dot_1723676032": {
     "context": "button",
-    "string": "Back to home"
+    "string": "Powrót do strony głównej"
   },
   "src_dot_components_dot_ErrorPage_dot_2736139139": {
     "string": "Ooops!..."
   },
   "src_dot_components_dot_ErrorPage_dot_2845142593": {
-    "string": "Error"
+    "string": "Błąd"
   },
   "src_dot_components_dot_ErrorPage_dot_3090161573": {
     "string": "Don't worry, everything is gonna be fine"
@@ -3067,27 +3067,27 @@
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupCreatePage_dot_3920591233": {
     "context": "card description",
-    "string": "Expand or restrict group's permissions to access certain part of saleor system."
+    "string": "Dodaj lub usuń dostęp to modułów sklepu."
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupDeleteDialog_dot_2297471173": {
     "context": "dialog content",
-    "string": "Are you sure you want to delete {name}?"
+    "string": "Czy chcesz usunąć {name}?"
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupDeleteDialog_dot_3528974446": {
     "context": "dialog title",
-    "string": "Delete permission group"
+    "string": "Usuń grupę uprawnień"
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupDeleteDialog_dot_956177443": {
     "context": "deletion error message",
-    "string": "Cant's delete group which is out of your permission scope"
+    "string": "Nie można usunąć grupy do której nie masz uprawnień"
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupDetailsPage_dot_3765873075": {
     "context": "checkbox label",
-    "string": "Group has full access to the store"
+    "string": "Grupa ma pełny dostęp do sklepu"
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupDetailsPage_dot_3920591233": {
     "context": "card description",
-    "string": "Expand or restrict group's permissions to access certain part of saleor system."
+    "string": "Dodaj lub usuń dostęp to modułów sklepu."
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupInfo_dot_2081191949": {
     "context": "text field label",
@@ -3112,7 +3112,7 @@
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupMemberList_dot_1004218338": {
     "context": "staff member status",
-    "string": "Inactive"
+    "string": "Aktywna"
   },
   "src_dot_permissionGroups_dot_components_dot_PermissionGroupMemberList_dot_136112637": {
     "context": "empty list message",
@@ -3149,11 +3149,11 @@
   },
   "src_dot_permissionGroups_dot_components_dot_UnassignMembersDialog_dot_3005518110": {
     "context": "dialog title",
-    "string": "Unassign users"
+    "string": "Odznacz użytkownika"
   },
   "src_dot_permissionGroups_dot_components_dot_UnassignMembersDialog_dot_778652830": {
     "context": "dialog content",
-    "string": "Are you sure you want to unassign {counter,plural,one{this member} other{{displayQuantity} members}}?"
+    "string": "Czy chcesz odznaczyć {counter,plural,one{tego użytkownika} other{{displayQuantity} użytkowników}}?"
   },
   "src_dot_permissionGroups_dot_views_dot_PermissionGroupCreate_dot_1140231710": {
     "context": "window title",
@@ -3164,7 +3164,7 @@
   },
   "src_dot_permissionGroups_dot_views_dot_PermissionGroupDetails_dot_870815507": {
     "context": "button title",
-    "string": "Unassign"
+    "string": "Odznacz"
   },
   "src_dot_permissionGroups_dot_views_dot_PermissionGroupList_dot_92979760": {
     "string": "Permission Group Deleted"
@@ -3426,7 +3426,7 @@
   },
   "src_dot_productTypes_dot_views_dot_ProductTypeUpdate_dot_870815507": {
     "context": "unassign attribute from product type, button",
-    "string": "Unassign"
+    "string": "Odznacz"
   },
   "src_dot_products": {
     "context": "products section name",
@@ -4538,7 +4538,7 @@
   },
   "src_dot_staff_dot_components_dot_StaffDetailsPage_dot_22572205": {
     "context": "card description",
-    "string": "User is assigned to:"
+    "string": "Użytkownik przypisany do:"
   },
   "src_dot_staff_dot_components_dot_StaffDetailsPage_dot_2690176844": {
     "context": "dialog header",
@@ -4573,7 +4573,7 @@
   },
   "src_dot_staff_dot_components_dot_StaffList_dot_1004218338": {
     "context": "staff member status",
-    "string": "Inactive"
+    "string": "Aktywny"
   },
   "src_dot_staff_dot_components_dot_StaffList_dot_1789607185": {
     "string": "Adres e-mail"
@@ -4630,7 +4630,7 @@
   },
   "src_dot_staff_dot_components_dot_StaffProperties_dot_2650522200": {
     "context": "section header",
-    "string": "Staff Member Information"
+    "string": "Informacje o koncie"
   },
   "src_dot_staff_dot_components_dot_StaffProperties_dot_2771097267": {
     "context": "button",
