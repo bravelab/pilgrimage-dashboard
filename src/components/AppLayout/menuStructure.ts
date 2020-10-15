@@ -2,7 +2,6 @@ import { commonMessages, sectionNames } from "@saleor/intl";
 import { IntlShape } from "react-intl";
 import catalogIcon from "@assets/images/menu-catalog-icon.svg";
 import customerIcon from "@assets/images/menu-customers-icon.svg";
-import discountsIcon from "@assets/images/menu-discounts-icon.svg";
 import homeIcon from "@assets/images/menu-home-icon.svg";
 import ordersIcon from "@assets/images/menu-orders-icon.svg";
 import translationIcon from "@assets/images/menu-translation-icon.svg";
@@ -13,7 +12,6 @@ import { collectionListUrl } from "../../collections/urls";
 import { customerListUrl } from "../../customers/urls";
 import { orderDraftListUrl, orderListUrl } from "../../orders/urls";
 import { productListUrl } from "../../products/urls";
-import { saleListUrl, voucherListUrl } from "../../discounts/urls";
 import { languageListUrl } from "../../translations/urls";
 import { PermissionEnum, PermissionGroupEnum } from "../../types/globalTypes";
 
@@ -105,7 +103,7 @@ function createMenuStructure(intl: IntlShape): IMenuItem[] {
       ),
       url: customerListUrl()
     },
-    {
+    /* {
       ariaLabel: "discounts",
       children: [
         {
@@ -125,7 +123,7 @@ function createMenuStructure(intl: IntlShape): IMenuItem[] {
         PermissionEnum.MANAGE_DISCOUNTS,
         user.permissionGroups
       )
-    },
+    }, */
     {
       ariaLabel: "translations",
       icon: translationIcon,

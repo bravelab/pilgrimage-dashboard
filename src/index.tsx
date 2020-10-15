@@ -35,7 +35,6 @@ import { API_URI, APP_MOUNT_URI } from "./config";
 import ConfigurationSection, { createConfigurationMenu } from "./configuration";
 import AppStateProvider from "./containers/AppState";
 import { CustomerSection } from "./customers";
-import DiscountSection from "./discounts";
 import HomePage from "./home";
 import { commonMessages } from "./intl";
 import NavigationSection from "./navigation";
@@ -201,7 +200,7 @@ const Routes: React.FC = () => {
                     path="/customers"
                     component={CustomerSection}
                   />
-                  <SectionRoute
+                  {/* <SectionRoute
                     permissions={[PermissionEnum.MANAGE_DISCOUNTS]}
                     permissionsGroups={[
                       PermissionGroupEnum.FULL_ACCESS,
@@ -209,7 +208,7 @@ const Routes: React.FC = () => {
                     ]}
                     path="/discounts"
                     component={DiscountSection}
-                  />
+                  /> */}
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PAGES]}
                     permissionsGroups={[
