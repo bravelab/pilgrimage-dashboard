@@ -260,7 +260,8 @@ const Routes: React.FC = () => {
                     permissions={[PermissionEnum.MANAGE_STAFF]}
                     permissionsGroups={[
                       PermissionGroupEnum.FULL_ACCESS,
-                      PermissionGroupEnum.CUSTOMER_SUPPORT
+                      PermissionGroupEnum.CUSTOMER_SUPPORT,
+                      PermissionGroupEnum.VOLUNTEER
                     ]}
                     path="/staff"
                     component={StaffSection}
