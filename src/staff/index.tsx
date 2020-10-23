@@ -1,3 +1,8 @@
+import { hasPermissionGroup } from "@saleor/auth/misc";
+import NotFoundPage from "@saleor/components/NotFoundPage";
+import useNavigator from "@saleor/hooks/useNavigator";
+import useUser from "@saleor/hooks/useUser";
+import { PermissionGroupEnum } from "@saleor/types/globalTypes";
 import { parse as parseQs } from "qs";
 import React from "react";
 import { useIntl } from "react-intl";
@@ -29,28 +34,48 @@ const StaffList: React.FC<RouteComponentProps<{}>> = ({ location }) => {
 interface StaffDetailsRouteProps {
   id: string;
 }
+
 const StaffDetails: React.FC<RouteComponentProps<StaffDetailsRouteProps>> = ({
   match
 }) => {
   const qs = parseQs(location.search.substr(1));
   const params: StaffMemberDetailsUrlQueryParams = qs;
+  const navigate = useNavigator();
 
-  return (
+  const { user } = useUser();
+  const isNotVolunteer = !hasPermissionGroup(
+    PermissionGroupEnum.VOLUNTEER,
+    user
+  );
+
+  return isNotVolunteer || user.id === decodeURIComponent(match.params.id) ? (
     <StaffDetailsComponent
       id={decodeURIComponent(match.params.id)}
       params={params}
     />
+  ) : (
+    <NotFoundPage onBack={() => navigate("/")} />
   );
 };
 
 const Component = () => {
   const intl = useIntl();
 
+  const { user } = useUser();
+  const isNotVolunteer = !hasPermissionGroup(
+    PermissionGroupEnum.VOLUNTEER,
+    user
+  );
+
   return (
     <>
       <WindowTitle title={intl.formatMessage(sectionNames.staff)} />
       <Switch>
-        <Route exact path={staffListPath} component={StaffList} />
+        <Route
+          exact
+          path={staffListPath}
+          component={isNotVolunteer ? StaffList : NotFoundPage}
+        />
         <Route path={staffMemberDetailsPath(":id")} component={StaffDetails} />
       </Switch>
     </>
