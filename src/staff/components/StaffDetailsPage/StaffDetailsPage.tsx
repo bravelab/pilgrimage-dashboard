@@ -1,3 +1,6 @@
+import { hasPermissionGroup } from "@saleor/auth/misc";
+import useUser from "@saleor/hooks/useUser";
+import { PermissionGroupEnum } from "@saleor/types/globalTypes";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -87,6 +90,12 @@ const StaffDetailsPage: React.FC<StaffDetailsPageProps> = ({
     })) || []
   );
 
+  const { user } = useUser();
+  const isNotVolunteer = !hasPermissionGroup(
+    PermissionGroupEnum.VOLUNTEER,
+    user
+  );
+
   const initialForm: StaffDetailsFormData = {
     email: staffMember?.email || "",
     firstName: staffMember?.firstName || "",
@@ -110,9 +119,11 @@ const StaffDetailsPage: React.FC<StaffDetailsPageProps> = ({
 
         return (
           <Container>
-            <AppHeader onBack={onBack}>
-              {intl.formatMessage(sectionNames.staff)}
-            </AppHeader>
+            {isNotVolunteer && (
+              <AppHeader onBack={onBack}>
+                {intl.formatMessage(sectionNames.staff)}
+              </AppHeader>
+            )}
             <PageHeader title={getUserName(staffMember)} />
             <Grid>
               <div>
